@@ -1,34 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script>
-        const appendNumberToBody = (number) => {
-            const label = document.createTextNode('Number: ');
-            const el = document.createTextNode(number);
-            document.body.appendChild(label);
-            document.body.appendChild(el);
-        };
-
-        const appendStringToBody = (text) => {
-            const label = document.createTextNode('Text: ');
-            const el = document.createTextNode(text);
-            document.body.appendChild(el);
-        };
-
-        /**
-         * Object will be used as argument to pass to Rust lib
-         */
-        const importObject = {
-            env: {
-                appendNumberToBody,
-                appendStringToBody,
-                alert
-            },
-        };
-
-        WebAssembly.instantiateStreaming(fetch("utils.gc.wasm"), importObject)
-            .then(wasmModule => wasmModule.instance.exports.run());
-    </script>
+    <script src="index.js"></script>
 </head>
 <body></body>
 </html>
