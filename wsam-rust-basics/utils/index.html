@@ -9,10 +9,20 @@
             document.body.appendChild(el);
         };
 
+        const appendStringToBody = (text) => {
+            const label = document.createTextNode('Text: ');
+            const el = document.createTextNode(text);
+            document.body.appendChild(el);
+        };
+
+        /**
+         * Object will be used as argument to pass to Rust lib
+         */
         const importObject = {
             env: {
-                appendNumberToBody: appendNumberToBody,
-                alert: alert
+                appendNumberToBody,
+                appendStringToBody,
+                alert
             },
         };
 
