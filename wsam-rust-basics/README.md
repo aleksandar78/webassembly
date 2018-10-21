@@ -49,5 +49,10 @@ Create util lib
 cargo new --lib utils
 ```
 
+Build WebAssembly module
+```shell
+wasm-pack build
+```
+
 
 
