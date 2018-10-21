@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        fetch("main.gc.wasm")
+        .then(res => res.arrayBuffer())
+        .then(res => WebAssembly.instantiate(res))
+        .then(mod => {
+        console.log(mod);
+        const result = mod.instance.main();
+        const text = document.createTextNode(result);
+        document.body.appendChild(text);
+        });
+    </script>
+</head>
+<body></body>
+</html>

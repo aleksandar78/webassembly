@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        WebAssembly.instantiateStreaming(fetch("utils.gc.wasm"))
+            .then(mod = > {
+            console.log(mod);
+        const result = mod.instance.exports.add_one(3);
+        const text = document.createTextNode(result);
+        var doc = document.body.appendChild(text);
+        })
+        ;
+    </script>
+</head>
+<body></body>
+</html>

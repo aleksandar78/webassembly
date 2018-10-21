@@ -1,0 +1,8 @@
+[package]
+name = "main"
+version = "0.1.0"
+authors = ["Aleksandar Pavlovic <aleksandar.pavlovic78@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+utils = { path  = "../utils" }
